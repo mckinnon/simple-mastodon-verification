@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Simple Mastodon Verification
  * Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
- * Description: Provides and Admin menu option to define a rel="me" in metatags
+ * Description: Provides an General Settings menu option to define a rel="me" in metatags. See your Mastodon user profile for further instructions.
  * Version: 1.0.0
  * Author: Jay McKinnon
  * Author URI: http://opendna.com/
