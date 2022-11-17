@@ -1,6 +1,6 @@
 # simple-mastodon-verification #
-**Contributors:** [mckinnon](https://opendna.com)
-**Tags:** wordpress, plugin, fediverse, activitypub, mastodon
+**Contributors:** [mckinnon](https://opendna.com)  
+**Tags:** wordpress, plugin, fediverse, activitypub, mastodon  
 **Requires at least:** 6.1
 **Tested up to:** 6.1
 **Stable tag:** 1.0.0
