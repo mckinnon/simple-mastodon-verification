@@ -29,45 +29,39 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// https://developer.wordpress.org/reference/functions/register_activation_hook/
-//register_activation_hook( __FILE__, 'smverifcation_function_to_run' );
-
-// https://developer.wordpress.org/reference/functions/register_deactivation_hook/
-//register_deactivation_hook( __FILE__, 'smverifcation_function_to_run' );
-
 function smverification_register_fields() {
-    register_setting('general', 'mastodon_site_url', 'esc_attr');
-    add_settings_field('mastodon_site_url', '<label for="mastodon_site_url">'.__('Verify Mastodon URL' , 'mastodon_site_url' ).'</label>' , 'smverification_print_field', 'general');
+    register_setting('general', 'smverification_site_url', 'esc_attr');
+    add_settings_field('smverification_site_url', '<label for="smverification_site_url">'.__('Verify Mastodon profile' , 'smverification_site_url' ).'</label>' , 'smverification_print_field', 'general');
 }
 
 add_filter('admin_init', 'smverification_register_fields');
 
 function smverification_print_field() {
-    $value = get_option( 'mastodon_site_url', '' );
-	#input validation $pattern should accept any valid URL, http or https, up to two sub-domains (https://subsubsub.subsub.sub.domain.tld/@user)
+    $value = get_option( 'smverification_site_url', '' );
+	// input validation $pattern should accept any valid URL, http or https, up to two sub-domains (https://subsubsub.subsub.sub.domain.tld/@user)
 	$pattern = 'http(s?)(:\/\/)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)([a-zA-z0-9\-_]+)(\.)([a-zA-z0-9\-_]+)(\/)(@)([a-zA-z0-9\-_.]+)';
-    echo '<input type="url" id="mastodon_site_url" name="mastodon_site_url" value="' . $value . '" pattern="'. $pattern .'" />';
+    // defines input field
+    echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="Mastodon profile URL must be in the form of https://domain.tld/@user" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
 }
+
+function smverification_input_css() {
+    // adds admin CSS for input validation
+    echo '<style>input#smverification_site_url:invalid {outline: 2px solid #ff0000};}</style>' . "\n\n";
+}
+add_action( 'admin_head', 'smverification_input_css', 500);
 
 /*
  * Add tag to <head>
  */
-function mastodon_verification_meta_link() {
-
-   // Check is we are in author archive
-   // https://developer.wordpress.org/reference/functions/is_author/
-   if (!empty('mastodon_site_url') ) {
-       // get_queried_object() returns current author in author's arvhives
-       // https://developer.wordpress.org/reference/classes/wp_query/get_queried_object/
-       //$author = ;
-
+function smverification_verification_meta_link() {
+   if (!empty('smverification_site_url') ) {
        // Generate meta description
-       $mastodon_verification_url = get_option('mastodon_site_url','');
-	   //sprintf( __( 'All posts by author %s', 'cyb-textdomain' ), $author->display_name );
+       $smverification_verification_url = get_option('smverification_site_url','');
 
        // Print description meta tag
-       echo '<link rel="me" href="' . esc_attr( $mastodon_verification_url ) . '">'."\n\n";
+       echo '<link rel="me" href="' . esc_url( $smverification_verification_url ) . '">'."\n\n";
    }
 }
-add_action( 'wp_head', 'mastodon_verification_meta_link', 5);
+add_action( 'wp_head', 'smverification_verification_meta_link', 5);
+
 ?>
