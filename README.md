@@ -25,7 +25,8 @@ When a valid URL has been saved, a tag containing a rel="me" link pointing to th
 Project maintained on GitHub at [mckinnon/simple-mastodon-verification](https://github.com/mckinnon/simple-mastodon-verification).
 
 ### 1.0.1 ###
-escaped echoed variables, standardized function names, improved form UI and validation, cleaned up comments.
+
+* escaped echoed variables, standardized function names, improved form UI and validation, cleaned up comments.
 
 ### 1.0.0 ###
 
