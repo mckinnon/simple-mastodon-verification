@@ -22,7 +22,6 @@ The plugin will add a field at the bottom of the *General Setting* page (Admin D
 When a valid URL has been saved, a tag containing a rel="me" link pointing to the Mastodon user profile will be added near the top of the site's metadata (between <head> elements). If a link to the Wordpress instance is added as one of that user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL.
 
 ## Changelog ##
-
 Project maintained on GitHub at [mckinnon/simple-mastodon-verification](https://github.com/mckinnon/simple-mastodon-verification).
 
 ### 1.0.1 ###
