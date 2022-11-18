@@ -8,4 +8,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-delete_option( 'simple_mastodon_verification_settings' );
+delete_option( 'smverification_site_url' );
