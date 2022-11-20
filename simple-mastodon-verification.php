@@ -30,7 +30,7 @@
 defined( 'ABSPATH' ) || exit;
 
 function smverification_register_fields() {
-    register_setting('general', 'smverification_site_url', 'esc_attr');
+    register_setting('general', 'smverification_site_url', 'string'); //'esc_attr'
     add_settings_field('smverification_site_url', '<label for="smverification_site_url">'.__('Verify Mastodon profile' , 'smverification_site_url' ).'</label>' , 'smverification_print_field', 'general');
 }
 
@@ -63,5 +63,15 @@ function smverification_verification_meta_link() {
    }
 }
 add_action( 'wp_head', 'smverification_verification_meta_link', 5);
+/*
+class smverification_admin {
+    public function __construct() {
+        add_filter( 'user_contactmethods', array( $this, 'contact_methods' ), 13, 1 );
+    }
 
+    public function contact_methods( $methods ) {
+        $methods['mastodon']   = __( 'Mastodon', 'author-bio-box' );
+    }
+}
+*/
 ?>
