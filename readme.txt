@@ -8,7 +8,7 @@ Stable tag: 1.1.0
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
-Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and individual users.
+Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
 
 == Description ==
 = Admin verification =
