@@ -31,7 +31,10 @@ defined( 'ABSPATH' ) || exit;
 
 function smverification_register_fields() {
     register_setting('general', 'smverification_site_url', 'string'); //'esc_attr'
+    register_setting('general', 'smverification_allow_authors', 'string');
+
     add_settings_field('smverification_site_url', '<label for="smverification_site_url">'.__('Verify Mastodon profile' , 'smverification_site_url' ).'</label>' , 'smverification_print_field', 'general');
+    add_settings_field('smverification_allow_authors', '<label for="smverification_allow_authors">'.__("Verify Authors' profiles" , 'smverification_allow_authors' ).'</label>' , 'smverification_print_authors_field', 'general');
 }
 
 add_filter('admin_init', 'smverification_register_fields');
@@ -50,28 +53,40 @@ function smverification_input_css() {
 }
 add_action( 'admin_head', 'smverification_input_css', 500);
 
-/*
- * Add tag to <head>
- */
-function smverification_verification_meta_link() {
-   if (!empty('smverification_site_url') ) {
-       // Generate meta description
-       $smverification_verification_url = get_option('smverification_site_url','');
+function smverification_print_authors_field() {
+    // allows admin to toggle Authors' Mastodon fields
+    $value = get_option( 'smverification_allow_authors', '' );
+    if ( $value !== "YES" ) {
+        $value = NULL;
+    }
+    echo '<input type="url" id="smverification_allow_authors" name="smverification_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> type "YES" to enable this feature';
+}
 
-       // Print description meta tag
-       echo '<link rel="me" href="' . esc_url( $smverification_verification_url ) . '">'."\n\n";
-   }
+// Add tag to <head>
+function smverification_verification_meta_link() {
+    // Generate meta description for Mastodon URL for site or Authors
+    if (!empty( 'smverification_site_url' ) && !is_author()) {
+       $smverification_verification_url = get_option( 'smverification_site_url','');
+    } else if (!empty( 'smverification_allow_authors' ) && is_author()) {
+        $smverification_verification_url = get_the_author_meta( 'mastodon' );
+    }
+    if (!empty( $smverification_verification_url )) {
+        echo '<link rel="me" href="' . esc_url( $smverification_verification_url ) . '">'."\n";
+    }
 }
 add_action( 'wp_head', 'smverification_verification_meta_link', 5);
-/*
-class smverification_admin {
-    public function __construct() {
-        add_filter( 'user_contactmethods', array( $this, 'contact_methods' ), 13, 1 );
-    }
 
-    public function contact_methods( $methods ) {
-        $methods['mastodon']   = __( 'Mastodon', 'author-bio-box' );
+function smverification_modify_user_contact_methods( $smverification_contact_methods ) {
+    // Add user contact methods
+    $smverification_contact_methods['mastodon']   = __( 'Mastodon URL', 'smverification_author' );
+    return $smverification_contact_methods;
+}
+
+function smverification_authors_option() {
+    $value = get_option( 'smverification_allow_authors', '' );
+    if ( $value == "YES" ) {
+        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods');
     }
 }
-*/
+smverification_authors_option();
 ?>
