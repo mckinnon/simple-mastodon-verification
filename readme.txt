@@ -36,7 +36,7 @@ Install the plugin from the Wordpress store and enable in the Plugin menu. Confi
 
 == Upgrade Notice ==
 = 1.1.0 =
-Adds support for validation by site users with archive pages.
+Adds support for validation of site users' Mastodon accounts.
 
 = 1.0.2 =
 Initial commit to Wordpress plugin store.
