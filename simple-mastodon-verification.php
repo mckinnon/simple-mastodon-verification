@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Simple Mastodon Verification
- * Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
+ * Plugin URI: https://wordpress.org/plugins/simple-mastodon-verification/
  * Description: Provides an General Settings menu option to define a rel="me" in metatags. See your Mastodon user profile for further instructions.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Jay McKinnon
  * Author URI: http://opendna.com/
- * Text Domain: simple-mastodon-verification
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain: simple-mastodon-verification
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
  *
@@ -42,7 +42,7 @@ add_filter('admin_init', 'smverification_register_fields');
 function smverification_print_field() {
     $value = get_option( 'smverification_site_url', '' );
 	// input validation $pattern should accept any valid URL, http or https, up to two sub-domains (https://subsubsub.subsub.sub.domain.tld/@user)
-	$pattern = 'http(s?)(:\/\/)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)([a-zA-z0-9\-_]+)(\.)([a-zA-z0-9\-_]+)(\/)(@)([a-zA-z0-9\-_.]+)';
+	$pattern = 'https(:\/\/)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)([a-zA-z0-9\-_]+)(\.)([a-zA-z0-9\-_]+)(\/)(@)([a-zA-z0-9\-_.]+)';
     // defines input field
     echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="Mastodon profile URL must be in the form of https://domain.tld/@user" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
 }

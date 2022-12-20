@@ -3,7 +3,7 @@
 **Tags:** wordpress, plugin, fediverse, activitypub, mastodon  
 **Requires at least:** 6.1  
 **Tested up to:** 6.1.1  
-**Stable tag:** 1.1.0  
+**Stable tag:** 1.1.1  
 **Requires PHP:** 7.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.txt
@@ -29,6 +29,10 @@ When a valid URL has been saved, a tag containing a rel="me" link will be added 
 
 ## Changelog ##
 Project maintained on GitHub at [mckinnon/simple-mastodon-verification](https://github.com/mckinnon/simple-mastodon-verification).
+
+### 1.1.1 ###
+
+* Site-wide Mastodon URL restricted to https to match changes to Mastodon v4.0.
 
 ### 1.1.0 ###
 
