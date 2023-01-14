@@ -11,6 +11,7 @@
  * Text Domain: simple-mastodon-verification
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
+ * Primary Branch: main
  *
  * 
  * Simple Mastodon Verification is free software: you can redistribute it and/or modify
