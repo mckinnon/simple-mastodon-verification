@@ -3,13 +3,15 @@
 **Tags:** wordpress, plugin, fediverse, activitypub, mastodon  
 **Requires at least:** 6.1  
 **Tested up to:** 6.1.1  
-**Stable tag:** 1.1.1  
+**Stable tag:** 1.1.2  
 **Requires PHP:** 7.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.txt
 
 ## Description ##
-This [Wordpress](https://wordpress.org/) plugin menu options to define a rel="me" in metatags. This is useful for validating personal blogs with [Mastodon](https://joinmastodon.org/) instances and to verify Authors of group blogs.
+Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
+
+This [Wordpress](https://wordpress.org/) plugin adds menu options to define a rel="me" in metatags. This is useful for validating personal blogs with [Mastodon](https://joinmastodon.org/) instances and to verify Authors of group blogs.
 
 This plugin was tested on Wordpress 6.1. Compatiblity with earlier or later versions is unknown.
 
@@ -29,6 +31,10 @@ When a valid URL has been saved, a tag containing a rel="me" link will be added 
 
 ## Changelog ##
 Project maintained on GitHub at [mckinnon/simple-mastodon-verification](https://github.com/mckinnon/simple-mastodon-verification).
+
+### 1.1.2 ###
+
+* Remove closing PHP tag
 
 ### 1.1.1 ###
 

@@ -2,14 +2,13 @@
 /**
  * Plugin Name: Simple Mastodon Verification
  * Plugin URI: https://wordpress.org/plugins/simple-mastodon-verification/
- * Description: Provides an General Settings menu option to define a rel="me" in metatags. See your Mastodon user profile for further instructions.
- * Version: 1.1.1
+ * Description: Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
+ * Version: 1.1.2
  * Author: Jay McKinnon
  * Author URI: http://opendna.com/
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: simple-mastodon-verification
- * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
  *
  * 
@@ -89,4 +88,3 @@ function smverification_authors_option() {
     }
 }
 smverification_authors_option();
-?>
