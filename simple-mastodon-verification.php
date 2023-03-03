@@ -32,8 +32,8 @@ function smverification_register_fields() {
     register_setting('general', 'smverification_site_url', 'string'); //'esc_attr'
     register_setting('general', 'smverification_allow_authors', 'string');
 
-    add_settings_field('smverification_site_url', '<label for="smverification_site_url">'.__('Verify Mastodon profile' , 'smverification_site_url' ).'</label>' , 'smverification_print_field', 'general');
-    add_settings_field('smverification_allow_authors', '<label for="smverification_allow_authors">'.__("Verify Authors' profiles" , 'smverification_allow_authors' ).'</label>' , 'smverification_print_authors_field', 'general');
+    add_settings_field('smverification_site_url', '<label for="smverification_site_url">'.__('Verify Mastodon profile' , 'simple-mastodon-verification' ).'</label>' , 'smverification_print_field', 'general');
+    add_settings_field('smverification_allow_authors', '<label for="smverification_allow_authors">'.__("Verify Authors' profiles" , 'simple-mastodon-verification' ).'</label>' , 'smverification_print_authors_field', 'general');
 }
 
 add_filter('admin_init', 'smverification_register_fields');
@@ -43,7 +43,7 @@ function smverification_print_field() {
 	// input validation $pattern should accept any valid URL up to two sub-domains (https://subsubsub.subsub.sub.domain.tld/@user). https is required as of Mastodon v.4.0.
 	$pattern = 'https(:\/\/)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)([a-zA-z0-9\-_]+)(\.)([a-zA-z0-9\-_]+)(\/)(@)([a-zA-z0-9\-_.]+)';
     // defines input field
-    echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="Mastodon profile URL must be in the form of https://domain.tld/@user" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
+    echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="' . __( 'Mastodon profile URL must be in the form of https://domain.tld/@user', 'simple-mastodon-verification' ) .'" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
 }
 
 function smverification_input_css() {
@@ -58,7 +58,7 @@ function smverification_print_authors_field() {
     if ( $value !== "YES" ) {
         $value = NULL;
     }
-    echo '<input type="url" id="smverification_allow_authors" name="smverification_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> type "YES" to enable this feature';
+    echo '<input type="url" id="smverification_allow_authors" name="smverification_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> ' . __('type "YES" to enable this feature', 'simple-mastodon-verification' );
 }
 
 // Add tag to <head>
@@ -77,7 +77,7 @@ add_action( 'wp_head', 'smverification_verification_meta_link', 5);
 
 function smverification_modify_user_contact_methods( $smverification_contact_methods ) {
     // Add user contact methods
-    $smverification_contact_methods['mastodon']   = __( 'Mastodon URL', 'smverification_author' );
+    $smverification_contact_methods['mastodon']   = __( 'Mastodon URL', 'simple-mastodon-verification' );
     return $smverification_contact_methods;
 }
 
