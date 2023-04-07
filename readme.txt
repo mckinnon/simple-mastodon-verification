@@ -2,7 +2,7 @@
 Contributors: opendna
 Tags: Mastodon, fediverse, verification
 Requires at least: 6.1
-Tested up to: 6.1.1
+Tested up to: 6.2
 Requires PHP: 7.4
 Stable tag: 1.1.3
 License: GPL-2.0+
