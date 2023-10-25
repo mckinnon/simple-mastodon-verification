@@ -3,11 +3,11 @@
 **Contributors:** [mckinnon](https://opendna.com)  
 **Tags:** wordpress, plugin, fediverse, activitypub, mastodon  
 **Requires at least:** 6.1  
-**Tested up to:** 6.2  
+**Tested up to:** 6.3.3  
 **Stable tag:** 1.1.3  
 **Requires PHP:** 7.4  
 **License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.txt
+**License URI:** [http://www.gnu.org/licenses/gpl-2.0.txt](http://www.gnu.org/licenses/gpl-2.0.txt)
 
 ## Description ##
 
