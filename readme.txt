@@ -29,6 +29,10 @@ When a valid URL has been saved, a tag containing a rel="me" link will be added 
 == Installation ==
 Install the plugin from the Wordpress store and enable in the Plugin menu. Configure on the General Settings page, then on User profile pages.
 
+*Note for Wordpress.com users*
+1. Installing this plugin on WordPress.com requires a paid subscription.
+2. Configuring and enabling this plugin requires entering 'Classic View' from the dashboard Screen (top right). The 'Default View' is Auttomatic's in-house UI and is not compatible with many WordPress plugin APIs.
+
 == Changelog ==
 Project maintained on GitHub at https://github.com/mckinnon/simple-mastodon-verification
 

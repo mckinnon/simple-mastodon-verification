@@ -22,6 +22,10 @@ This plugin was tested on Wordpress 6.1. Compatiblity with earlier or later vers
 1. Install the [Simple Mastodon Verification](https://wordpress.org/plugins/simple-mastodon-verification) plugin from the Wordpress store and enable in the Plugin menu, or
 2. Unzip and upload the files to */wp-content/themes/simple-mastodon verification* and enable in the Plugin menu.
 
+**Note for Wordpress.com users**
+1. Installing this plugin on WordPress.com requires a paid subscription.
+2. Configuring and enabling this plugin requires entering 'Classic View' from the dashboard Screen (top right). The 'Default View' is Auttomatic's in-house UI and is not compatible with many WordPress plugin APIs.
+
 ### Admin verification ###
 
 The plugin will add a field at the bottom of the *General Settings* page (Admin Dashboard > Settings>General Settings), labelled "Verify Mastodon URL". The field should accept any valid mastodon user URL up to three sub-domains deep. i.e `https://mastodon.social/@user` to `https://my.mastodon.del.icio.us/@user` The plugin does *not* accept Mastodon addresses (@user@domain.tld)
