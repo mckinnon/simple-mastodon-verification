@@ -72,7 +72,7 @@ function smverification_verification_meta_link() {
     if (!empty( $smverification_verification_url )) {
         $smverification_verification_id = explode("/", $smverification_verification_url);
         echo '<link rel="me" href="' . esc_url( $smverification_verification_url ) . '"/>' . "\n" . 
-        '<meta name="fediverse:creator" content="' . $smverification_verification_id[3] . '@' . $smverification_verification_id[2] . '" />' . "\n";
+        '<meta property="fediverse:creator" name="fediverse:creator" content="' . $smverification_verification_id[3] . '@' . $smverification_verification_id[2] . '"/>' . "\n";
     }
 }
 add_action( 'wp_head', 'smverification_verification_meta_link', 5);
