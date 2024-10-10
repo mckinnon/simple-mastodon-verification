@@ -3,7 +3,7 @@
  * Plugin Name: Simple Mastodon Verification
  * Plugin URI: https://wordpress.org/plugins/simple-mastodon-verification/
  * Description: Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
- * Version: 2.0.0
+ * Version: 2.0.1
  * Author: Jay McKinnon
  * Author URI: http://opendna.com/
  * License: GPL-2.0+
@@ -71,11 +71,10 @@ function smverification_verification_meta_link() {
     }
     if (!empty( $smverification_verification_url )) {
         $smverification_verification_id = explode("/", $smverification_verification_url);
-        echo '<link rel="me" href="' . esc_url( $smverification_verification_url ) . '"/>' . "\n" . 
-        '<meta property="fediverse:creator" name="fediverse:creator" content="' . $smverification_verification_id[3] . '@' . $smverification_verification_id[2] . '"/>' . "\n";
+        echo '<link rel="me" href="' . esc_url( $smverification_verification_url ) . '"/>' . "\n";
     }
 }
-add_action( 'wp_head', 'smverification_verification_meta_link', 5);
+add_action( 'wp_head', 'smverification_verification_meta_link');
 
 function smverification_modify_user_contact_methods( $smverification_contact_methods ) {
     // Add user contact methods
@@ -86,7 +85,7 @@ function smverification_modify_user_contact_methods( $smverification_contact_met
 function smverification_authors_option() {
     $value = get_option( 'smverification_allow_authors', '' );
     if ( $value == "YES" ) {
-        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods');
-    }
+        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods', 1);
+     }
 }
 smverification_authors_option();

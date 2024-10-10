@@ -4,7 +4,7 @@ Tags: Mastodon, fediverse, verification
 Requires at least: 6.1
 Tested up to: 6.6.2
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -35,6 +35,9 @@ Install the plugin from the Wordpress store and enable in the Plugin menu. Confi
 
 == Changelog ==
 Project maintained on GitHub at https://github.com/mckinnon/simple-mastodon-verification
+
+= 2.0.1 =
+* Remove support for fediverse:creator meta tag. See Installation page for details.
 
 = 2.0.0 =
 * Add support for fediverse:creator meta tag
