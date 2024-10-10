@@ -28,6 +28,7 @@ This plugin was tested on Wordpress 6.1. Compatiblity with earlier or later vers
 2. Configuring and enabling this plugin requires entering 'Classic View' from the dashboard Screen (top right). The 'Default View' is Auttomatic's in-house UI and is not compatible with many WordPress plugin APIs.
 
 **Note on fediverse:creator meta tags**
+
 Mastodon v4.3 added support for Open Graph ("Twitter Cards") by adopting a `<meta name="fediverse:creator"...` tag. I initially intended to support this tag in SMV v.2 but will not be doing that. Doing so requires implementing Open Graph support, and that takes this plugin away from the "Simple" philosophy I promised in the name.
 
 If you want those extended features, I suggest the [ActivityPub](https://wordpress.org/plugins/activitypub/) and [Open Graph](https://wordpress.org/plugins/opengraph/) plugins.
