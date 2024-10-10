@@ -16,12 +16,12 @@ Provides a General Settings menu option to define a rel=\"me\" in metatags for t
 = Admin verification =
 The plugin will add a field at the bottom of the *General Settings* page (Admin Dashboard > Settings>General Settings), labelled "Verify Mastodon URL". The field should accept any valid mastodon user URL up to three sub-domains deep. i.e. https://mastodon.social/@user to https://my.mastodon.del.icio.us/@user The plugin does *not* accept Mastodon addresses (@user@domain.tld)
 
-When a valid URL has been saved, a tag containing a rel="me" link pointing to the Mastodon user profile will be added near the top of the site's metadata (between <head> elements). If a link to the Wordpress instance is added as one of that user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL.
+When a valid URL has been saved, a tag containing a rel="me" link pointing to the Mastodon user profile will be added near the top of the site's metadata (between <head> elements). If a link to the Wordpress instance is added as one of that user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL. As of v.2.0.0, the plugin will add a corresponding `fediverse:creator` meta tag.
 
 = Author verification =
 If an Administrator enables the "Verify Authors' profiles" option on the *General Settings* page (Admin Dashboard > Settings>General Settings), a field labelled "Mastodon URL" will be added to users' profile pages (under "contact info").
 
-When a valid URL has been saved, a tag containing a rel="me" link will be added to the metadata (between <head> elements) on the Author's archive page *only*. If a link to the Wordpress Author archive is added as one of that's user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL.
+When a valid URL has been saved, a tag containing a rel="me" link will be added to the metadata (between <head> elements) on the Author's archive page *only*. If a link to the Wordpress Author archive is added as one of that's user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL. As of v.2.0.0, the plugin will add a corresponding `fediverse:creator` meta tag.
 
 = Plugin Development =
 *Simple Mastodon Verification* development is managed on GitHub, with official releases published on WordPress.org. The GitHub repo can be found at https://github.com/mckinnon/simple-mastodon-verification.
