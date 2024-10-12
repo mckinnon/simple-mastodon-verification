@@ -5,7 +5,7 @@
  * Description: Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
  * Version: 2.0.2
  * Author: Jay McKinnon
- * Author URI: http://opendna.com/
+ * Author URI: http://opendna.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: simple-mastodon-verification
@@ -84,7 +84,7 @@ function smverification_modify_user_contact_methods( $smverification_contact_met
 function smverification_authors_option() {
     $value = get_option( 'smverification_allow_authors', '' );
     if ( $value == "YES" ) {
-        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods', 1);
+        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods');
      }
 }
 smverification_authors_option();
