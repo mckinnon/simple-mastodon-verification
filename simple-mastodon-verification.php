@@ -1,15 +1,14 @@
 <?php
 /**
  * Plugin Name: Simple Mastodon Verification
- * Plugin URI: https://wordpress.org/plugins/simple-mastodon-verification/
+ * Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
  * Description: Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
  * Version: 2.0.1
  * Author: Jay McKinnon
- * Author URI: http://opendna.com/
+ * Author URI: http://opendna.com
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: simple-mastodon-verification
- * GitHub Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
  *
  * 
  * Simple Mastodon Verification is free software: you can redistribute it and/or modify
@@ -43,7 +42,7 @@ function smverification_print_field() {
 	// input validation $pattern should accept any valid URL up to two sub-domains (https://subsubsub.subsub.sub.domain.tld/@user). https is required as of Mastodon v.4.0.
 	$pattern = 'https(:\/\/)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)(([a-zA-z0-9\-_]+(\.))?)([a-zA-z0-9\-_]+)(\.)([a-zA-z0-9\-_]+)(\/)(@)([a-zA-z0-9\-_.]+)';
     // defines input field
-    echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="' . __( 'Mastodon profile URL must be in the form of https://domain.tld/@user', 'simple-mastodon-verification' ) .'" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
+    echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="' . esc_attr(__( 'Mastodon profile URL must be in the form of https://domain.tld/@user', 'simple-mastodon-verification' )) .'" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
 }
 
 function smverification_input_css() {
@@ -58,7 +57,7 @@ function smverification_print_authors_field() {
     if ( $value !== "YES" ) {
         $value = NULL;
     }
-    echo '<input type="url" id="smverification_allow_authors" name="smverification_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> ' . __('type "YES" to enable this feature', 'simple-mastodon-verification' );
+    echo '<input type="url" id="smverification_allow_authors" name="smverification_allow_authors" value="' . esc_attr($value) . '" title="undefined" style="width:6em;" placeholder="YES" /> ' . esc_attr(__('type "YES" to enable this feature', 'simple-mastodon-verification' ));
 }
 
 // Add tag to <head>
