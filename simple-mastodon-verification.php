@@ -85,7 +85,7 @@ function smverification_modify_user_contact_methods( $smverification_contact_met
 function smverification_authors_option() {
     $value = get_option( 'smverification_allow_authors', '' );
     if ( $value == "YES" ) {
-        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods', 1);
+        add_filter( 'user_contactmethods', 'smverification_modify_user_contact_methods');
      }
 }
 smverification_authors_option();

@@ -20,7 +20,7 @@ This plugin was tested on Wordpress 6.1. Compatiblity with earlier or later vers
 ## Installation & Use ##
 
 1. Install the [Simple Mastodon Verification](https://wordpress.org/plugins/simple-mastodon-verification) plugin from the Wordpress store and enable in the Plugin menu, or
-2. Unzip and upload the files to */wp-content/themes/simple-mastodon verification* and enable in the Plugin menu.
+2. Unzip and upload the files to */wp-content/plugins/simple-mastodon-verification* and enable in the Plugin menu.
 
 **Note for Wordpress.com users**
 
