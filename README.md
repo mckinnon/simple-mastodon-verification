@@ -43,7 +43,7 @@ When a valid URL has been saved, a tag containing a `rel="me"` link pointing to 
 
 If an Administrator enables the "Verify Authors' profiles" option on the *General Settings* page (Admin Dashboard > Settings>General Settings), a field labelled "Mastodon URL" will be added to users' profile pages (under "contact info").
 
-When a valid URL has been saved, a tag containing a `rel="me"` link will be added to the metadata (between `<head>` elements) on the Author's archive page *only*. If a link to the Wordpress Author archive is added as one of that's user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL. As of v.2.0.0, the plugin will add a corresponding `fediverse:creator` meta tag.
+When a valid URL has been saved, a tag containing a `rel="me"` link will be added to the metadata (between `<head>` elements) on the Author's archive page *only*. If a link to the Wordpress Author archive is added as one of that's user's profile metadata, the Mastodon instance will validate the ownership of the URL and add a green "verified" banner to the URL.
 
 ## Changelog ##
 
