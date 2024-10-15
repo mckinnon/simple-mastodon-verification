@@ -4,7 +4,7 @@ Tags: Mastodon, fediverse, verification
 Requires at least: 6.1
 Tested up to: 6.6.2
 Requires PHP: 7.4
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -38,6 +38,9 @@ Mastodon v4.3 added support for Open Graph ("Twitter Cards") by adopting a `<met
 
 == Changelog ==
 Project maintained on GitHub at https://github.com/mckinnon/simple-mastodon-verification
+
+= 2.0.3 =
+* WP standards require adding CSS to the head instead of inline. Rather than enqueue a .css containing only `input:invalid{}`, I have removed the style.
 
 = 2.0.2 =
 * Improved escaping and headers to comply with WP standards.

@@ -3,7 +3,7 @@
  * Plugin Name: Simple Mastodon Verification
  * Plugin URI: https://github.com/mckinnon/simple-mastodon-verification
  * Description: Provides a General Settings menu option to define a rel=\"me\" in metatags for the whole site and also individual contributors.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: Jay McKinnon
  * Author URI: http://opendna.com
  * License: GPL-2.0+
@@ -45,11 +45,13 @@ function smverification_print_field() {
     echo '<input type="url" id="smverification_site_url" name="smverification_site_url" value="' . esc_url($value) . '" pattern="'. esc_attr($pattern) .'" title="' . esc_attr(__( 'Mastodon profile URL must be in the form of https://domain.tld/@user', 'simple-mastodon-verification' )) .'" placeholder="https://mastodon.social/@user" style="width:30em;"/>';
 }
 
-function smverification_input_css() {
-    // adds admin CSS for input validation
-    echo '<style>input#smverification_site_url:invalid {outline: 2px solid #ff0000};}</style>' . "\n\n";
-}
-add_action( 'admin_head', 'smverification_input_css', 500);
+// adds admin CSS for input validation
+/* 
+ * function smverification_input_css() {  
+ *   echo '<style>input#smverification_site_url:invalid {outline: 2px solid #ff0000};}</style>' . "\n\n";
+ * }
+ * add_action( 'admin_head', 'smverification_input_css', 500);
+*/
 
 function smverification_print_authors_field() {
     // allows admin to toggle Authors' Mastodon fields
